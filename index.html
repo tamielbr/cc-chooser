@@ -1,5 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,427 +9,479 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-<script type="text/javascript">
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-30282593-1']);
+    _gaq.push(['_setDomainName', 'web2rights.com']);
+    _gaq.push(['_trackPageview']);
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-30282593-1']);
-  _gaq.push(['_setDomainName', 'web2rights.com']);
-  _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/animatedcollapse.js"></script>
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="js/animatedcollapse.js">
-
-/***********************************************
+  <!-- /***********************************************
 * Original version (CC-BY-SA) by web2rights - http://www.web2rights.com/OERIPRSupport/creativecommons/
 * Remixed version (CC-BY-SA) by Tel Amiel - for the Open Education Iniaitive - aberta.org.br
 * ----
 * Animated Collapsible DIV v2.4- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
 * This notice MUST stay intact for legal use
 * Visit Dynamic Drive at http://www.dynamicdrive.com/ for this script and 100s more
-***********************************************/
-
-</script>
-
-<script type="text/javascript">
-var contentInfo=new Array();
-//style information
-contentInfo[0]='instructions';
-contentInfo[1]='licenceone';
-contentInfo[2]='licencetwo';
-
-var licencesArray = new Array(); //CONTAINS ALL THE INFORMATION ABOUT THE LICENCES
-
-licencesArray[0]='CC Zero';
-licencesArray[1]='CC BY';
-licencesArray[2]='CC BY SA';
-licencesArray[3]='CC BY NC';
-licencesArray[4]='CC BY ND';
-licencesArray[5]='CC BY NC SA';
-licencesArray[6]='CC BY NC ND';
-
-//CREATE THREE DIMENSIONAL ARRAY!
-var compatibility= new Array(7);
-for (i=0; i <7; i++){
-	compatibility[i]=new Array(7)
-	for (y=0; y <7; y++){
-		compatibility[i][y]=new Array(7)
-	}
-}
-
-//var a = new Array();
-//var b = new Array('a','b');
-//var c = new Array(5);
-//var d = ['a','b','c'];
-//INFO FOR CC ZERO LICENCE
-compatibility[0][0]= [true,true,true,true,true,true,true];
-compatibility[0][1]= [false,true,true,true,true,true,true];
-compatibility[0][2]= [false,false,true,false,false,false,false];
-compatibility[0][3]= [false,false,false,true,false,true,true];
-compatibility[0][4]= [false,false,false,false,false,false,false];
-compatibility[0][5]= [false,false,false,false,false,true,false];
-compatibility[0][6]= [false,false,false,false,false,false,false];
-
-//INFO FOR CC BY LICENCE
-compatibility[1][0]=[false,true,true,true,true,true,true];
-compatibility[1][1]=[false,true,true,true,true,true,true];
-compatibility[1][2]=[false,false,true,false,false,false,false];
-compatibility[1][3]=[false,false,false,true,false,true,true];
-compatibility[1][4]=[false,false,false,false,false,false,false];
-compatibility[1][5]=[false,false,false,false,false,true,false];
-compatibility[1][6]=[false,false,false,false,false,false,false];
-
-//INFO FOR CC BY SA LICENCE
-compatibility[2][0]=[false,false,true,false,false,false,false];
-compatibility[2][1]=[false,false,true,false,false,false,false];
-compatibility[2][2]=[false,false,true,false,false,false,false];
-compatibility[2][3]=[false,false,false,false,false,false,false];
-compatibility[2][4]=[false,false,false,false,false,false,false];
-compatibility[2][5]=[false,false,false,false,false,false,false];
-compatibility[2][6]=[false,false,false,false,false,false,false];
-
-//INFO FOR CC BY NC LICENCE
-compatibility[3][0]=[false,false,false,true,false,true,true];
-compatibility[3][1]=[false,false,false,true,false,true,true];
-compatibility[3][2]=[false,false,false,false,false,false,false];
-compatibility[3][3]=[false,false,false,true,false,true,true];
-compatibility[3][4]=[false,false,false,false,false,false,false];
-compatibility[3][5]=[false,false,false,false,false,true,false];
-compatibility[3][6]=[false,false,false,false,false,false,false];
-
-//INFO FOR CC BY ND LICENCE
-compatibility[4][0]=[false,false,false,false,false,false,false];
-compatibility[4][1]=[false,false,false,false,false,false,false];
-compatibility[4][2]=[false,false,false,false,false,false,false];
-compatibility[4][3]=[false,false,false,false,false,false,false];
-compatibility[4][4]=[false,false,false,false,false,false,false];
-compatibility[4][5]=[false,false,false,false,false,false,false];
-compatibility[4][6]=[false,false,false,false,false,false,false];
-
-//INFO FOR CC BY NC SA LICENCE
-compatibility[5][0]=[false,false,false,false,false,true,false];
-compatibility[5][1]=[false,false,false,false,false,true,false];
-compatibility[5][2]=[false,false,false,false,false,true,false];
-compatibility[5][3]=[false,false,false,false,false,true,false];
-compatibility[5][4]=[false,false,false,false,false,false,false];
-compatibility[5][5]=[false,false,false,false,false,true,false];
-compatibility[5][6]=[false,false,false,false,false,false,false];
-
-//INFO FOR CC BY NC ND LICENCE
-compatibility[6][0]=[false,false,false,false,false,false,false];
-compatibility[6][1]=[false,false,false,false,false,false,false];
-compatibility[6][2]=[false,false,false,false,false,false,false];
-compatibility[6][3]=[false,false,false,false,false,false,false];
-compatibility[6][4]=[false,false,false,false,false,false,false];
-compatibility[6][5]=[false,false,false,false,false,false,false];
-compatibility[6][6]=[false,false,false,false,false,false,false];
-
-var endlicence=new Array(7); //START OF END LICENCE DATA
-for (i=0; i <7; i++){
-	endlicence[i]=new Array()
-}
-//INFO FOR CC ZERO END LICENCE
-endlicence[0][0]=true;
-endlicence[0][1]=false;
-endlicence[0][2]=false;
-endlicence[0][3]=false;
-endlicence[0][4]=false;
-endlicence[0][5]=false;
-endlicence[0][6]=false;
-//CC BY END LICENCE
-endlicence[1][0]=true;
-endlicence[1][1]=true;
-endlicence[1][2]=false;
-endlicence[1][3]=false;
-endlicence[1][4]=false;
-endlicence[1][5]=false;
-endlicence[1][6]=false;
-//CC BY SA END LICENCE
-endlicence[2][0]=true;
-endlicence[2][1]=true;
-endlicence[2][2]=true;
-endlicence[2][3]=false;
-endlicence[2][4]=false;
-endlicence[2][5]=false;
-endlicence[2][6]=false;
-//CC BY NC END LICENCE
-endlicence[3][0]=true;
-endlicence[3][1]=true;
-endlicence[3][2]=false;
-endlicence[3][3]=true;
-endlicence[3][4]=false;
-endlicence[3][5]=false;
-endlicence[3][6]=false;
-//CC BY ND END LICENCE
-endlicence[4][0]=true;
-endlicence[4][1]=true;
-endlicence[4][2]=false;
-endlicence[4][3]=false;
-endlicence[4][4]=false;
-endlicence[4][5]=false;
-endlicence[4][6]=false;
-//CC BY NC SA END LICENCE
-endlicence[5][0]=true;
-endlicence[5][1]=true;
-endlicence[5][2]=false;
-endlicence[5][3]=true;
-endlicence[5][4]=false;
-endlicence[5][5]=true;
-endlicence[5][6]=false;
-//CC BY NC ND END LICENCE
-endlicence[6][0]=true;
-endlicence[6][1]=true;
-endlicence[6][2]=false;
-endlicence[6][3]=true;
-endlicence[6][4]=false;
-endlicence[6][5]=false;
-endlicence[6][6]=false;
-
-//END OF DATA _____________________________________________________________________________________
-
-function selectedType(choiceid){
-	contentChoice= parseInt(choiceid);
-	//alert(contentInfo[choiceid]);
-	document.getElementById('one').checked=false;
-	document.getElementById('two').checked=false;
-	document.getElementById('three').checked=false;
-	document.getElementById('four').checked=false;
-	document.getElementById('five').checked=false;
-	document.getElementById('six').checked=false;
-	document.getElementById('seven').checked=false;
-	document.getElementById('seven').checked=false;
-	document.getElementById('CEL').selectedIndex = 0;
-
-	//alert(contentChoice);
-	if(contentChoice==0){//if this is one of the options which we cant work with e.g. text based (the title)
-		animatedcollapse.hide(['licencetwo', 'textinfotwo', 'licenceone', 'textinfoone', 'cczero' , 'ccby' , 'ccbysa' , 'ccbync' , 'ccbynd' , 'ccbyncsa', 'ccbyncnd', 'title1', 'title2']);
-		animatedcollapse.show(['instructions']);//show instructions
-		document.getElementById('ctype').innerHTML = 'Assistente de Compatibilidade de Licenças Creative Commons';
-		//alert("CLOSE 0");
-	}else	if (contentChoice==1){// IF WE KNOW THAT THE END LICENCE IS
-		//alert("CLOSE ONE");
-		animatedcollapse.show(['licencetwo', 'title1']);
-		animatedcollapse.hide(['instructions','textinfotwo', 'licenceone', 'title2']);
-
-		hideAll(); //hide all unused licences
-
-	}else if (contentChoice==2){ // IF WE HAVE CONTENT BUT DONT KNOW THE END LICENCE
-		hideAll(); //hide all unused licences
-		animatedcollapse.show(['licenceone', 'title2']);
-
-		animatedcollapse.hide(['instructions', 'licencetwo','textinfoone', 'advice', 'title1']);
-		//alert("CLOSE TWO");
+***********************************************/ -->
 
 
+  <script type="text/javascript">
+    var contentInfo = new Array();
+    //style information
+    contentInfo[0] = 'instructions';
+    contentInfo[1] = 'licenceone';
+    contentInfo[2] = 'licencetwo';
 
-	}
-	var w = document.getElementById('contentType').selectedIndex;
-		var selected_text = document.getElementById('contentType').options[w].text;
-}
+    var licencesArray = new Array(); //CONTAINS ALL THE INFORMATION ABOUT THE LICENCES
 
-function choosenEndLicence()//CALLED WHEN DROPDOWNS RUN
-{
-	//alert('CHOSEN END LICENCE');
-	var chosencontent = document.getElementById('CEL').value; //get the value of the licence they have chosen
-	displayLicencesForEndLicence(chosencontent);//send the number to a function which will display the relevant licences
+    licencesArray[0] = 'CC Zero';
+    licencesArray[1] = 'CC BY';
+    licencesArray[2] = 'CC BY SA';
+    licencesArray[3] = 'CC BY NC';
+    licencesArray[4] = 'CC BY ND';
+    licencesArray[5] = 'CC BY NC SA';
+    licencesArray[6] = 'CC BY NC ND';
 
-}
-function displayLicencesForEndLicence(position){ // display licences for content
-	//alert("chosen end licence");
-	animatedcollapse.show(['textinfotwo']);
-	if (endlicence[position][0]== true){
-		animatedcollapse.show(['cczero']);
-	}else{ animatedcollapse.hide(['cczero']);}
-	if (endlicence[position][1]== true){
-		animatedcollapse.show(['ccby']);
-	}else{ animatedcollapse.hide(['ccby']);}
-	if (endlicence[position][2]== true){
-		animatedcollapse.show(['ccbysa']);
-	}else{ animatedcollapse.hide(['ccbysa']);}
-	if (endlicence[position][3]== true){
-		animatedcollapse.show(['ccbync']);
-	}else{ animatedcollapse.hide(['ccbync']);}
-	if (endlicence[position][4]== true){
-		animatedcollapse.show(['ccbynd']);
-	}else{ animatedcollapse.hide(['ccbynd']);}
-	if (endlicence[position][5]== true){
-		animatedcollapse.show(['ccbyncsa']);
-	}else{ animatedcollapse.hide(['ccbyncsa']);}
-	if (endlicence[position][6]== true){
-		animatedcollapse.show(['ccbyncnd']);
-	}else{ animatedcollapse.hide(['ccbyncnd']);}
-}
+    //CREATE THREE DIMENSIONAL ARRAY!
+    var compatibility = new Array(7);
+    for (i = 0; i < 7; i++) {
+      compatibility[i] = new Array(7)
+      for (y = 0; y < 7; y++) {
+        compatibility[i][y] = new Array(7)
+      }
+    }
+
+    //var a = new Array();
+    //var b = new Array('a','b');
+    //var c = new Array(5);
+    //var d = ['a','b','c'];
+    //INFO FOR CC ZERO LICENCE
+    compatibility[0][0] = [true, true, true, true, true, true, true];
+    compatibility[0][1] = [false, true, true, true, true, true, true];
+    compatibility[0][2] = [false, false, true, false, false, false, false];
+    compatibility[0][3] = [false, false, false, true, false, true, true];
+    compatibility[0][4] = [false, false, false, false, false, false, false];
+    compatibility[0][5] = [false, false, false, false, false, true, false];
+    compatibility[0][6] = [false, false, false, false, false, false, false];
+
+    //INFO FOR CC BY LICENCE
+    compatibility[1][0] = [false, true, true, true, true, true, true];
+    compatibility[1][1] = [false, true, true, true, true, true, true];
+    compatibility[1][2] = [false, false, true, false, false, false, false];
+    compatibility[1][3] = [false, false, false, true, false, true, true];
+    compatibility[1][4] = [false, false, false, false, false, false, false];
+    compatibility[1][5] = [false, false, false, false, false, true, false];
+    compatibility[1][6] = [false, false, false, false, false, false, false];
+
+    //INFO FOR CC BY SA LICENCE
+    compatibility[2][0] = [false, false, true, false, false, false, false];
+    compatibility[2][1] = [false, false, true, false, false, false, false];
+    compatibility[2][2] = [false, false, true, false, false, false, false];
+    compatibility[2][3] = [false, false, false, false, false, false, false];
+    compatibility[2][4] = [false, false, false, false, false, false, false];
+    compatibility[2][5] = [false, false, false, false, false, false, false];
+    compatibility[2][6] = [false, false, false, false, false, false, false];
+
+    //INFO FOR CC BY NC LICENCE
+    compatibility[3][0] = [false, false, false, true, false, true, true];
+    compatibility[3][1] = [false, false, false, true, false, true, true];
+    compatibility[3][2] = [false, false, false, false, false, false, false];
+    compatibility[3][3] = [false, false, false, true, false, true, true];
+    compatibility[3][4] = [false, false, false, false, false, false, false];
+    compatibility[3][5] = [false, false, false, false, false, true, false];
+    compatibility[3][6] = [false, false, false, false, false, false, false];
+
+    //INFO FOR CC BY ND LICENCE
+    compatibility[4][0] = [false, false, false, false, false, false, false];
+    compatibility[4][1] = [false, false, false, false, false, false, false];
+    compatibility[4][2] = [false, false, false, false, false, false, false];
+    compatibility[4][3] = [false, false, false, false, false, false, false];
+    compatibility[4][4] = [false, false, false, false, false, false, false];
+    compatibility[4][5] = [false, false, false, false, false, false, false];
+    compatibility[4][6] = [false, false, false, false, false, false, false];
+
+    //INFO FOR CC BY NC SA LICENCE
+    compatibility[5][0] = [false, false, false, false, false, true, false];
+    compatibility[5][1] = [false, false, false, false, false, true, false];
+    compatibility[5][2] = [false, false, false, false, false, true, false];
+    compatibility[5][3] = [false, false, false, false, false, true, false];
+    compatibility[5][4] = [false, false, false, false, false, false, false];
+    compatibility[5][5] = [false, false, false, false, false, true, false];
+    compatibility[5][6] = [false, false, false, false, false, false, false];
+
+    //INFO FOR CC BY NC ND LICENCE
+    compatibility[6][0] = [false, false, false, false, false, false, false];
+    compatibility[6][1] = [false, false, false, false, false, false, false];
+    compatibility[6][2] = [false, false, false, false, false, false, false];
+    compatibility[6][3] = [false, false, false, false, false, false, false];
+    compatibility[6][4] = [false, false, false, false, false, false, false];
+    compatibility[6][5] = [false, false, false, false, false, false, false];
+    compatibility[6][6] = [false, false, false, false, false, false, false];
+
+    var endlicence = new Array(7); //START OF END LICENCE DATA
+    for (i = 0; i < 7; i++) {
+      endlicence[i] = new Array()
+    }
+    //INFO FOR CC ZERO END LICENCE
+    endlicence[0][0] = true;
+    endlicence[0][1] = false;
+    endlicence[0][2] = false;
+    endlicence[0][3] = false;
+    endlicence[0][4] = false;
+    endlicence[0][5] = false;
+    endlicence[0][6] = false;
+    //CC BY END LICENCE
+    endlicence[1][0] = true;
+    endlicence[1][1] = true;
+    endlicence[1][2] = false;
+    endlicence[1][3] = false;
+    endlicence[1][4] = false;
+    endlicence[1][5] = false;
+    endlicence[1][6] = false;
+    //CC BY SA END LICENCE
+    endlicence[2][0] = true;
+    endlicence[2][1] = true;
+    endlicence[2][2] = true;
+    endlicence[2][3] = false;
+    endlicence[2][4] = false;
+    endlicence[2][5] = false;
+    endlicence[2][6] = false;
+    //CC BY NC END LICENCE
+    endlicence[3][0] = true;
+    endlicence[3][1] = true;
+    endlicence[3][2] = false;
+    endlicence[3][3] = true;
+    endlicence[3][4] = false;
+    endlicence[3][5] = false;
+    endlicence[3][6] = false;
+    //CC BY ND END LICENCE
+    endlicence[4][0] = true;
+    endlicence[4][1] = true;
+    endlicence[4][2] = false;
+    endlicence[4][3] = false;
+    endlicence[4][4] = false;
+    endlicence[4][5] = false;
+    endlicence[4][6] = false;
+    //CC BY NC SA END LICENCE
+    endlicence[5][0] = true;
+    endlicence[5][1] = true;
+    endlicence[5][2] = false;
+    endlicence[5][3] = true;
+    endlicence[5][4] = false;
+    endlicence[5][5] = true;
+    endlicence[5][6] = false;
+    //CC BY NC ND END LICENCE
+    endlicence[6][0] = true;
+    endlicence[6][1] = true;
+    endlicence[6][2] = false;
+    endlicence[6][3] = true;
+    endlicence[6][4] = false;
+    endlicence[6][5] = false;
+    endlicence[6][6] = false;
+
+    //END OF DATA _____________________________________________________________________________________
+
+    function selectedType(choiceid) {
+      contentChoice = parseInt(choiceid);
+      //alert(contentInfo[choiceid]);
+      document.getElementById('one').checked = false;
+      document.getElementById('two').checked = false;
+      document.getElementById('three').checked = false;
+      document.getElementById('four').checked = false;
+      document.getElementById('five').checked = false;
+      document.getElementById('six').checked = false;
+      document.getElementById('seven').checked = false;
+      document.getElementById('seven').checked = false;
+      document.getElementById('CEL').selectedIndex = 0;
+
+      //alert(contentChoice);
+      if (contentChoice == 0) { //if this is one of the options which we cant work with e.g. text based (the title)
+        animatedcollapse.hide(['licencetwo', 'textinfotwo', 'licenceone', 'textinfoone', 'cczero', 'ccby', 'ccbysa', 'ccbync', 'ccbynd', 'ccbyncsa', 'ccbyncnd', 'title1', 'title2']);
+        animatedcollapse.show(['instructions']); //show instructions
+        document.getElementById('ctype').innerHTML = 'Assistente de Compatibilidade de Licenças Creative Commons';
+        //alert("CLOSE 0");
+      } else if (contentChoice == 1) { // IF WE KNOW THAT THE END LICENCE IS
+        //alert("CLOSE ONE");
+        animatedcollapse.show(['licencetwo', 'title1']);
+        animatedcollapse.hide(['instructions', 'textinfotwo', 'licenceone', 'title2']);
+
+        hideAll(); //hide all unused licences
+
+      } else if (contentChoice == 2) { // IF WE HAVE CONTENT BUT DONT KNOW THE END LICENCE
+        hideAll(); //hide all unused licences
+        animatedcollapse.show(['licenceone', 'title2']);
+
+        animatedcollapse.hide(['instructions', 'licencetwo', 'textinfoone', 'advice', 'title1']);
+        //alert("CLOSE TWO");
 
 
 
-function hideAll(){
-	animatedcollapse.hide(['cczero']);
-	animatedcollapse.hide(['ccby']);
-	animatedcollapse.hide(['ccbysa']);
-	animatedcollapse.hide(['ccbync']);
-	animatedcollapse.hide(['ccbynd']);
-	animatedcollapse.hide(['ccbyncsa']);
-	animatedcollapse.hide(['ccbyncnd']);
+      }
+      var w = document.getElementById('contentType').selectedIndex;
+      var selected_text = document.getElementById('contentType').options[w].text;
+    }
 
-}
+    function choosenEndLicence() //CALLED WHEN DROPDOWNS RUN
+    {
+      //alert('CHOSEN END LICENCE');
+      var chosencontent = document.getElementById('CEL').value; //get the value of the licence they have chosen
+      displayLicencesForEndLicence(chosencontent); //send the number to a function which will display the relevant licences
 
+    }
 
-function displayCompatibleLicences(position){
-
-	//alert("compatibility");
-	//SET ALL LICENCES TO TRUE
-	var cczero=true;
-	var ccby=true;
-	var ccbysa=true;
-	var ccbync=true;
-	var ccbynd=true;
-	var ccbyncsa=true;
-	var ccbyncnd=true;
-	//NOW WE NEED TO READ ALL VALUES FROM THE FORM ITEMS
-	var ptone=document.getElementById('one').checked;
-	var pttwo=document.getElementById('two').checked;
-	var ptthree=document.getElementById('three').checked;
-	var ptfour=document.getElementById('four').checked;
-	var ptfive=document.getElementById('five').checked;
-	var ptsix=document.getElementById('six').checked;
-	var ptseven=document.getElementById('seven').checked;
-	checkCount=0; //keep track of how many check boxes are used
-
-	checkCount++;
-	var checklist = new Array();
-
-	if(ptone){checklist.push(0)}
-	if(pttwo){checklist.push(1)}
-	if(ptthree){checklist.push(2)}
-	if(ptfour){checklist.push(3)}
-	if(ptfive){checklist.push(4)}
-	if(ptsix){checklist.push(5)}
-	if(ptseven){checklist.push(6)}
-
-	checkTotal=checklist.length;//
-	//alert(checklist);
-	for(i=0; i<checkTotal; i++){// first loop to go through each checked item we added to array
-		for(num=0; num<7; num++){//second loop to go through each item to check compatibility
-			firstItem=checklist[0];
-			comparison=checklist[i];
-			check=compatibility[firstItem][comparison][num];//read out each value
-				if((num==0) & (check==false)){ cczero=false; } //if we are looking at cczero and its false
-				if((num==1) & (check==false)){ ccby=false; } //etc
-				if((num==2) & (check==false)){ ccbysa=false; }
-				if((num==3) & (check==false)){ ccbync=false; }
-				if((num==4) & (check==false)){ ccbynd=false; }
-				if((num==5) & (check==false)){ ccbyncsa=false; }
-				if((num==6) & (check==false)){ ccbyncnd=false; }
-		}
-	}
+    function displayLicencesForEndLicence(position) { // display licences for content
+      //alert("chosen end licence");
+      animatedcollapse.show(['textinfotwo']);
+      if (endlicence[position][0] == true) {
+        animatedcollapse.show(['cczero']);
+      } else {
+        animatedcollapse.hide(['cczero']);
+      }
+      if (endlicence[position][1] == true) {
+        animatedcollapse.show(['ccby']);
+      } else {
+        animatedcollapse.hide(['ccby']);
+      }
+      if (endlicence[position][2] == true) {
+        animatedcollapse.show(['ccbysa']);
+      } else {
+        animatedcollapse.hide(['ccbysa']);
+      }
+      if (endlicence[position][3] == true) {
+        animatedcollapse.show(['ccbync']);
+      } else {
+        animatedcollapse.hide(['ccbync']);
+      }
+      if (endlicence[position][4] == true) {
+        animatedcollapse.show(['ccbynd']);
+      } else {
+        animatedcollapse.hide(['ccbynd']);
+      }
+      if (endlicence[position][5] == true) {
+        animatedcollapse.show(['ccbyncsa']);
+      } else {
+        animatedcollapse.hide(['ccbyncsa']);
+      }
+      if (endlicence[position][6] == true) {
+        animatedcollapse.show(['ccbyncnd']);
+      } else {
+        animatedcollapse.hide(['ccbyncnd']);
+      }
+    }
 
 
-if(checkTotal==0){ //if no checkboxes are ticked
-		animatedcollapse.hide(['advice']);
 
-		animatedcollapse.hide(['textinfoone','cczero','ccby','ccbysa','ccbynd','ccbync','ccbyncsa','ccbyncnd']);
-	}else{
+    function hideAll() {
+      animatedcollapse.hide(['cczero']);
+      animatedcollapse.hide(['ccby']);
+      animatedcollapse.hide(['ccbysa']);
+      animatedcollapse.hide(['ccbync']);
+      animatedcollapse.hide(['ccbynd']);
+      animatedcollapse.hide(['ccbyncsa']);
+      animatedcollapse.hide(['ccbyncnd']);
 
-
-//	alert(checkCount);
-
-	if((cczero==false) & (ccby==false) & (ccbysa==false) & (ccbync==false) & (ccbynd==false) & (ccbyncsa==false) & (ccbyncnd==false)){//if no boxes are checked- we need to hide em all
-		animatedcollapse.show(['advice']);
-		animatedcollapse.hide(['textinfoone']);
-	}else{
-		animatedcollapse.hide(['advice']);
-		animatedcollapse.show(['textinfoone']);
-	}
-
-	//go through the array and show compatible licences and hide non compatible ones
-	if (cczero== true){
-		animatedcollapse.show(['cczero']);
-	}else{ animatedcollapse.hide(['cczero']);
-
-	}
-	if (ccby== true){
-		animatedcollapse.show(['ccby']);
-	}else{ animatedcollapse.hide(['ccby']);
-
-	}
-	if (ccbysa== true){
-		animatedcollapse.show(['ccbysa']);
-	}else{ animatedcollapse.hide(['ccbysa']);
-
-	}
-	if (ccbync== true){
-		animatedcollapse.show(['ccbync']);
-	}else{ animatedcollapse.hide(['ccbync']);
-	}
-	if (ccbynd== true){
-		animatedcollapse.show(['ccbynd']);
-	}else{ animatedcollapse.hide(['ccbynd']);
-	}
-	if (ccbyncsa== true){
-		animatedcollapse.show(['ccbyncsa']);
-	}else{ animatedcollapse.hide(['ccbyncsa']);
-	}
-	if (ccbyncnd== true){
-		animatedcollapse.show(['ccbyncnd']);
-	}else{ animatedcollapse.hide(['ccbyncnd']);
-	}
-	}
+    }
 
 
-}
+    function displayCompatibleLicences(position) {
+
+      //alert("compatibility");
+      //SET ALL LICENCES TO TRUE
+      var cczero = true;
+      var ccby = true;
+      var ccbysa = true;
+      var ccbync = true;
+      var ccbynd = true;
+      var ccbyncsa = true;
+      var ccbyncnd = true;
+      //NOW WE NEED TO READ ALL VALUES FROM THE FORM ITEMS
+      var ptone = document.getElementById('one').checked;
+      var pttwo = document.getElementById('two').checked;
+      var ptthree = document.getElementById('three').checked;
+      var ptfour = document.getElementById('four').checked;
+      var ptfive = document.getElementById('five').checked;
+      var ptsix = document.getElementById('six').checked;
+      var ptseven = document.getElementById('seven').checked;
+      checkCount = 0; //keep track of how many check boxes are used
+
+      checkCount++;
+      var checklist = new Array();
+
+      if (ptone) {
+        checklist.push(0)
+      }
+      if (pttwo) {
+        checklist.push(1)
+      }
+      if (ptthree) {
+        checklist.push(2)
+      }
+      if (ptfour) {
+        checklist.push(3)
+      }
+      if (ptfive) {
+        checklist.push(4)
+      }
+      if (ptsix) {
+        checklist.push(5)
+      }
+      if (ptseven) {
+        checklist.push(6)
+      }
+
+      checkTotal = checklist.length; //
+      //alert(checklist);
+      for (i = 0; i < checkTotal; i++) { // first loop to go through each checked item we added to array
+        for (num = 0; num < 7; num++) { //second loop to go through each item to check compatibility
+          firstItem = checklist[0];
+          comparison = checklist[i];
+          check = compatibility[firstItem][comparison][num]; //read out each value
+          if ((num == 0) & (check == false)) {
+            cczero = false;
+          } //if we are looking at cczero and its false
+          if ((num == 1) & (check == false)) {
+            ccby = false;
+          } //etc
+          if ((num == 2) & (check == false)) {
+            ccbysa = false;
+          }
+          if ((num == 3) & (check == false)) {
+            ccbync = false;
+          }
+          if ((num == 4) & (check == false)) {
+            ccbynd = false;
+          }
+          if ((num == 5) & (check == false)) {
+            ccbyncsa = false;
+          }
+          if ((num == 6) & (check == false)) {
+            ccbyncnd = false;
+          }
+        }
+      }
 
 
-function Calculate(){
-	var part1=document.getElementById('part1').value;
-	var part2=document.getElementById('part2').value;
+      if (checkTotal == 0) { //if no checkboxes are ticked
+        animatedcollapse.hide(['advice']);
 
-		document.getElementById('result').innerHTML = result;
+        animatedcollapse.hide(['textinfoone', 'cczero', 'ccby', 'ccbysa', 'ccbynd', 'ccbync', 'ccbyncsa', 'ccbyncnd']);
+      } else {
 
-}
-animatedcollapse.addDiv('instructions', 'fade=1,height=0px') /*Era 520 no height*/
-animatedcollapse.addDiv('licenceone', 'fade=1')
-animatedcollapse.addDiv('licencetwo', 'fade=1')
-animatedcollapse.addDiv('textinfoone', 'fade=1')
-animatedcollapse.addDiv('textinfotwo', 'fade=1')
-animatedcollapse.addDiv('advice', 'fade=1')
-animatedcollapse.addDiv('title1', 'fade=1')
-animatedcollapse.addDiv('title2', 'fade=1')
-//THESE ARE THE INFO BLOCKS FOR EACH LICENCE
-animatedcollapse.addDiv('cczero', 'fade=1')
-animatedcollapse.addDiv('ccby', 'fade=1')
-animatedcollapse.addDiv('ccbysa', 'fade=1')
-animatedcollapse.addDiv('ccbync', 'fade=1')
-animatedcollapse.addDiv('ccbynd', 'fade=1')
-animatedcollapse.addDiv('ccbyncsa', 'fade=1')
-animatedcollapse.addDiv('ccbyncnd', 'fade=1')
 
-animatedcollapse.ontoggle=function($, divobj, state){ //fires each time a DIV is expanded/contracted
-	//$: Access to jQuery
-	//divobj: DOM reference to DIV being expanded/ collapsed. Use "divobj.id" to get its ID
-	//state: "block" or "none", depending on state
-}
+        //	alert(checkCount);
 
-animatedcollapse.init()
+        if ((cczero == false) & (ccby == false) & (ccbysa == false) & (ccbync == false) & (ccbynd == false) & (ccbyncsa == false) & (ccbyncnd == false)) { //if no boxes are checked- we need to hide em all
+          animatedcollapse.show(['advice']);
+          animatedcollapse.hide(['textinfoone']);
+        } else {
+          animatedcollapse.hide(['advice']);
+          animatedcollapse.show(['textinfoone']);
+        }
 
-</script>
-<!-- o4 --><link rel="canonical" href="http://jmplus.net/mBQOLzB5"/><!-- c4 --></head>
+        //go through the array and show compatible licences and hide non compatible ones
+        if (cczero == true) {
+          animatedcollapse.show(['cczero']);
+        } else {
+          animatedcollapse.hide(['cczero']);
+
+        }
+        if (ccby == true) {
+          animatedcollapse.show(['ccby']);
+        } else {
+          animatedcollapse.hide(['ccby']);
+
+        }
+        if (ccbysa == true) {
+          animatedcollapse.show(['ccbysa']);
+        } else {
+          animatedcollapse.hide(['ccbysa']);
+
+        }
+        if (ccbync == true) {
+          animatedcollapse.show(['ccbync']);
+        } else {
+          animatedcollapse.hide(['ccbync']);
+        }
+        if (ccbynd == true) {
+          animatedcollapse.show(['ccbynd']);
+        } else {
+          animatedcollapse.hide(['ccbynd']);
+        }
+        if (ccbyncsa == true) {
+          animatedcollapse.show(['ccbyncsa']);
+        } else {
+          animatedcollapse.hide(['ccbyncsa']);
+        }
+        if (ccbyncnd == true) {
+          animatedcollapse.show(['ccbyncnd']);
+        } else {
+          animatedcollapse.hide(['ccbyncnd']);
+        }
+      }
+
+
+    }
+
+
+    function Calculate() {
+      var part1 = document.getElementById('part1').value;
+      var part2 = document.getElementById('part2').value;
+
+      document.getElementById('result').innerHTML = result;
+
+    }
+    animatedcollapse.addDiv('instructions', 'fade=1,height=0px') /*Era 520 no height*/
+    animatedcollapse.addDiv('licenceone', 'fade=1')
+    animatedcollapse.addDiv('licencetwo', 'fade=1')
+    animatedcollapse.addDiv('textinfoone', 'fade=1')
+    animatedcollapse.addDiv('textinfotwo', 'fade=1')
+    animatedcollapse.addDiv('advice', 'fade=1')
+    animatedcollapse.addDiv('title1', 'fade=1')
+    animatedcollapse.addDiv('title2', 'fade=1')
+    //THESE ARE THE INFO BLOCKS FOR EACH LICENCE
+    animatedcollapse.addDiv('cczero', 'fade=1')
+    animatedcollapse.addDiv('ccby', 'fade=1')
+    animatedcollapse.addDiv('ccbysa', 'fade=1')
+    animatedcollapse.addDiv('ccbync', 'fade=1')
+    animatedcollapse.addDiv('ccbynd', 'fade=1')
+    animatedcollapse.addDiv('ccbyncsa', 'fade=1')
+    animatedcollapse.addDiv('ccbyncnd', 'fade=1')
+
+    animatedcollapse.ontoggle = function($, divobj, state) { //fires each time a DIV is expanded/contracted
+      //$: Access to jQuery
+      //divobj: DOM reference to DIV being expanded/ collapsed. Use "divobj.id" to get its ID
+      //state: "block" or "none", depending on state
+    }
+
+    animatedcollapse.init()
+  </script>
+  <!-- o4 -->
+  <link rel="canonical" href="http://jmplus.net/mBQOLzB5" />
+  <!-- c4 -->
+</head>
 
 <body>
 
-<div class="holder">
-  <div class="row">
+  <div class="holder">
+    <div class="row">
 
-<div class="header">
-  <div style="margin: 0 20px;">
-  <h3 id="ctype">Creative Commons - Compatibilidade de Licenças</h3>
-</div>
-<label style="margin-top: 10px;">
+      <div class="header">
+        <div style="margin: 0 20px;">
+          <h3 id="ctype">Creative Commons - Compatibilidade de Licenças</h3>
+        </div>
+        <label style="margin-top: 10px;">
   <div class="col-lg-12 col-md-12 col-sm-10 col-xs-10" style="margin: 0 auto;float: none;">
   <select name="contentType" id="contentType" class="form-control" onchange="javascript:selectedType(this.value);" autocomplete="off">
     <option value="0">Instruções</option>
@@ -437,47 +490,47 @@ animatedcollapse.init()
   </select>
 </div>
 </label>
-</div>
+      </div>
 
 
-<!-- <a id="topPix" class="image instructions" onclick="return false" href="">View Image</a> -->
+      <!-- <a id="topPix" class="image instructions" onclick="return false" href="">View Image</a> -->
 
-<!-- First option -->
-<div id="title1" class="panel panel-danger">
-  <div class="panel-heading">
-    <h3 class="panel-title">Assistente #1</h3>
-  </div>
-  <div id="licencetwo" class="panel-body" style="background: #fdfbfb">
-     <p style="text-align:left">Eu tenho algumas obras com licenças Creative Commons que quero remixar para um REA. Eu quero fazer com que a obra final tenha uma única licença Creative Commons. Quero saber quais licenças são compatíveis.</p>
-     <b>Selecione as licenças Creative Commons das obras que você quer remixar:</b>
-    <div class="options">
-    <input onclick="displayCompatibleLicences();" id="one" type="checkbox" value="one" /> CC ZERO<br />
-    <input onclick="displayCompatibleLicences();" id="two" type="checkbox" value="one" /> CC BY<br />
-    <input onclick="displayCompatibleLicences();" id="three" type="checkbox" value="one" /> CC BY SA<br />
-    <input onclick="displayCompatibleLicences();" id="four" type="checkbox" value="one" /> CC BY NC<br />
-    <input onclick="displayCompatibleLicences();" id="five" type="checkbox" value="one" /> CC BY ND<br />
-    <input onclick="displayCompatibleLicences();" id="six" type="checkbox" value="one" /> CC BY NC SA<br />
-    <input onclick="displayCompatibleLicences();" id="seven" type="checkbox" value="one" /> CC BY NC ND<br />
-    </div>
-  </div>
-</div>
+      <!-- First option -->
+      <div id="title1" class="panel panel-danger">
+        <div class="panel-heading">
+          <h3 class="panel-title">Assistente #1</h3>
+        </div>
+        <div id="licencetwo" class="panel-body" style="background: #fdfbfb">
+          <p style="text-align:left">Eu tenho algumas obras com licenças Creative Commons que quero remixar para um REA. Eu quero fazer com que a obra final tenha uma única licença Creative Commons. Quero saber quais licenças são compatíveis.</p>
+          <b>Selecione as licenças Creative Commons das obras que você quer remixar:</b>
+          <div class="options">
+            <input onclick="displayCompatibleLicences();" id="one" type="checkbox" value="one" /> CC ZERO<br />
+            <input onclick="displayCompatibleLicences();" id="two" type="checkbox" value="one" /> CC BY<br />
+            <input onclick="displayCompatibleLicences();" id="three" type="checkbox" value="one" /> CC BY SA<br />
+            <input onclick="displayCompatibleLicences();" id="four" type="checkbox" value="one" /> CC BY NC<br />
+            <input onclick="displayCompatibleLicences();" id="five" type="checkbox" value="one" /> CC BY ND<br />
+            <input onclick="displayCompatibleLicences();" id="six" type="checkbox" value="one" /> CC BY NC SA<br />
+            <input onclick="displayCompatibleLicences();" id="seven" type="checkbox" value="one" /> CC BY NC ND<br />
+          </div>
+        </div>
+      </div>
 
-<div id="textinfoone">
-  <!-- Default panel contents -->
-  <div  class="panel-heading" style="background: #c9e3ff; padding-bottom: 0px;">
-    <p>Você pode colocar a sua obra ou adaptação sob essa(s) licença(s) Creative Commons:</b><br />
-  </div>
-</div>
-<!-- End of First option -->
+      <div id="textinfoone">
+        <!-- Default panel contents -->
+        <div class="panel-heading" style="background: #c9e3ff; padding-bottom: 0px;">
+          <p>Você pode colocar a sua obra ou adaptação sob essa(s) licença(s) Creative Commons:</b><br />
+        </div>
+      </div>
+      <!-- End of First option -->
 
-<!-- Second option -->
-<div id="title2" class="panel panel-success">
-  <div class="panel-heading">
-    <h3 class="panel-title">Assistente #2</h3>
-  </div>
-  <div id="licenceone" class="panel-body" style="background: #fafcf9; display:none">
-    <p style="text-align:left">Eu sei quais as licenças Creative Commons que eu quero usar para licenciar minha obra. Quero saber quais licenças são compatíveis com a que eu escolhi:</b><br /><br>
-    <select class="form-control" onchange="choosenEndLicence();" name="contentType" id="CEL" >
+      <!-- Second option -->
+      <div id="title2" class="panel panel-success">
+        <div class="panel-heading">
+          <h3 class="panel-title">Assistente #2</h3>
+        </div>
+        <div id="licenceone" class="panel-body" style="background: #fafcf9; display:none">
+          <p style="text-align:left">Eu sei quais as licenças Creative Commons que eu quero usar para licenciar minha obra. Quero saber quais licenças são compatíveis com a que eu escolhi:</b><br /><br>
+            <select class="form-control" onchange="choosenEndLicence();" name="contentType" id="CEL">
         <option >Escolha uma opção</option>
         <option  value="0">CC ZERO</option>
         <option value="1">CC BY</option>
@@ -487,115 +540,129 @@ animatedcollapse.init()
         <option value="5">CC BY NC SA</option>
         <option value="6">CC BY NC ND</option>
       </select>
-  </div>
-</div>
+        </div>
+      </div>
 
-<div id="textinfotwo">
-  <!-- Default panel contents -->
-  <div  class="panel-heading" style="background:#c9e3ff;padding-bottom: 0px;">
-    <p>Você pode remixar licenciadas com as seguinte(s) licença(s) Creative Commons como parte da sua obra, sabendo que elas serão compatíveis com a sua escolha de licença Creative Commons para a obra final:</b>
-  </div>
-</div>
+      <div id="textinfotwo">
+        <!-- Default panel contents -->
+        <div class="panel-heading" style="background:#c9e3ff;padding-bottom: 0px;">
+          <p>Você pode remixar licenciadas com as seguinte(s) licença(s) Creative Commons como parte da sua obra, sabendo que elas serão compatíveis com a sua escolha de licença Creative Commons para a obra final:</b>
+        </div>
+      </div>
 
-<div id="instructions">
-<div id="wizards" class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">Assistentes</h3>
-  </div>
-  <div class="panel-body" style="text-align: justify;">
-      <p>Use o <b>Assistente 1</b> se você quer usar recursos que já tem licenças Creative Commons e quer misturá-los (fazer um remix) e disponibilizar o seu recurso com uma única licença Creative Commons. O assistente vai lhe dizer quais são as suas opções.</p>
-      <p>
-        Use o <b>Assistente 2</b> se você já tiver escolhido a licença Creative Commons que você deseja usar para licenciar o seu Recurso Educacional Aberto e quer saber quais recursos com licenças Creative Commons você pode utilizar no seu remix, ou seja, quais tipos de licenças são compatíveis com a que você escolheu.
+      <div id="instructions">
+        <div id="wizards" class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Assistentes</h3>
+          </div>
+          <div class="panel-body" style="text-align: justify;">
+            <p>Use o <b>Assistente 1</b> se você quer usar recursos que já tem licenças Creative Commons e quer misturá-los (fazer um remix) e disponibilizar o seu recurso com uma única licença Creative Commons. O assistente vai lhe dizer quais são as suas
+              opções.
+            </p>
+            <p>
+              Use o <b>Assistente 2</b> se você já tiver escolhido a licença Creative Commons que você deseja usar para licenciar o seu Recurso Educacional Aberto e quer saber quais recursos com licenças Creative Commons você pode utilizar no seu remix,
+              ou seja, quais tipos de licenças são compatíveis com a que você escolheu.
+            </p>
+          </div>
+        </div>
+
+        <div id="notes" class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Notas</h3>
+          </div>
+          <div class="panel-body" style="text-align: justify;">
+            <p>Licenças <a href="https://creativecommons.org/choose/?lang=pt_BR">Creative Commons</a> se tornaram um padrão internacional para pessoas que querem licenciar suas obras de maneira mais aberta, ou seja, sem "todos os direitos reservados". Esse
+              assistente lhe ajuda a verificar a compatilidade entre as seis diferentes licenças Creative Commons. Para uma introdução rápida à Creative Commons e como elas se aplicam aos Recursos Educacionais Abertos, visite o <a href="http://educacaoaberta.org/cadernorea/licen%C3%A7as">Caderno REA</a>.
+              <p>
+                Não é possível relicenciar o trabalho de outra pessoa que está licenciado em Creative Commons. É possível difundir o trabalho de terceiros que tenham uma licença Creative Commons em sua obra em sua totalidade, por si só ou como parte de uma coleção, mas
+                a licença original continuará se aplicando a obra original (ou seja, o que foi licenciado originalmente permanece com sua licença original).</p>
+              <p>Quando uma obra em Creative Commons é incluída <b>integralmente</b> com outra obra, existem duas camadas de licenciamento. A obra original permanece com sua licença original, mas a compilação pode ter outra licença, desde que compatível.</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="advice" class="invisibleBox">
+        <b>Você não pode misturar obras com essas licenças Creative Commons. Considere essas alternativas:</b>
+        <br />
+        <ol>
+          <li> Selecione obras alternativas que estejam licenciadas com uma licença Creative Commons compatível.</li>
+          <li> Peça permissão aos detentores dos direitos da obra.</a>
+          </li>
+          <li> Faça um link ou “embed” do conteúdo apontando que essa obra está licenciada com sua licença específica Creative Commons.</li>
+          <li> Na dúvida, faça um link para a obra e não a insira (“embed”) em sua obra.</li>
+        </ol>
+      </div>
+
+
+      <div class="licence-list">
+        <!-- CC ZERO INFORMATION  -->
+        <div id="cczero" class="invisibleBox" style="background: #f7f9fc; display:none;border-width: 1px;border-style: solid;border-color: #c9e3ff;">
+          <b>CC ZERO</b><br />
+          <a rel="license" target="_blank" href="http://creativecommons.org/choose/zero/">Creative Commons Zero</a>.
+        </div>
+
+        <!-- CC BY INFORMATION  -->
+        <div id="ccby" class="invisibleBox" style="background: #eff4fa; display:none; border-width: 1px;border-style: solid;border-color: #c9e3ff;">
+          <b>CC BY</b><br />
+          <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.pt_BR"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br /><a rel="license" target="_blank" href="https://creativecommons.org/licenses/by/4.0/deed.pt_BR">Creative Commons Attribuição 4.0 Internacional</a>.
+        </div>
+
+        <!-- CC BY SA INFORMATION  -->
+        <div id="ccbysa" class="invisibleBox" style="background: #e7eff8; display:none; border-width: 1px;border-style: solid;border-color: #c9e3ff;">
+          <b>CC BY SA</b><br />
+          <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br /><a rel="license" target="_blank"
+            href="https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-Compartilha Igual 4.0 Internacional</a>.
+        </div>
+
+        <!-- CC BY NC INFORMATION  -->
+        <div id="ccbync" class="invisibleBox" style="background: #dfeaf5; display:none; border-width: 1px;border-style: solid;border-color: #c9e3ff;">
+          <b>CC BY NC</b><br />
+          <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.pt_BR"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/88x31.png" /></a><br /><a rel="license" target="_blank"
+            href="https://creativecommons.org/licenses/by-nc/4.0/deed.pt_BR">Creative Commons Atribuição-Não Comercial 4.0 Internacional</a>.
+        </div>
+
+        <!-- CC BY ND INFORMATION  -->
+        <div id="ccbynd" class="invisibleBox" style="background: #d7e5f3; display:none; border-width: 1px;border-style: solid;border-color: #b4cce5;">
+          <b>CC BY ND</b><br />
+          <a rel="license" href="https://creativecommons.org/licenses/by-nd/4.0/deed.pt_BR"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nd/3.0/88x31.png" /></a><br /><a rel="license" target="_blank"
+            href="https://creativecommons.org/licenses/by-nd/4.0/deed.pt_BR">Creative Commons Atribuição-Sem Derivações 4.0 Internacional</a>.
+        </div>
+
+        <!-- CC BY NC SA INFORMATION  -->
+        <div id="ccbyncsa" class="invisibleBox" style="background: #cfdff1; display:none; border-width: 1px;border-style: solid;border-color: #b4cce5;">
+          <b>CC BY NC SA</b><br />
+          <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt_BR"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br /><a rel="license" target="_blank"
+            href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt_BR">Creative Commons Atribuição-Não Comercial-Compartilha Igual 4.0 Internacional</a>.
+        </div>
+
+        <!-- CC BY NC ND INFORMATION  -->
+        <div id="ccbyncnd" class="invisibleBox" style="background: #c7daee; display:none; border-width: 1px;border-style: solid;border-color: #a0b5cc;">
+          <b>CC BY NC ND</b><br />
+          <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.pt_BR"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png" /></a><br /><a rel="license" target="_blank"
+            href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.pt_BR">Creative Commons Atribuição-Não Comercial-Sem Derivações 4.0 Internacional</a>.
+        </div>
+
+        <div id="score" class="score" style="background:#fff; display:none ">
+          Indicative Risk Level:
+          <label id="result"> <!-- a Label to locate result in it --></label>
+        </div>
+      </div>
+
+    </div>
+    <div class="footer">
+
+      <p>Os responsáveis pela obra original <a href="http://www.web2rights.com/OERIPRSupport/creativecommons/">Web2Rights Ltd, HEFCE, CC, JISC Legal e HE Academy</a>, bem como os autores desse remix se eximem de qualquer responsabilidade legal. O uso das
+        informações é feita por conta e risco do usuário, sendo o material desse site meramente informativo.</p>
+      <p>Criado originalmente por <a style="text-decoration: underline !important;" href="http://www.robstillwell.info">Rob Stillwell</a>. Este remix criado pela <a href="http://educacaoaberta.org/">Cátedra UNESCO em Educação Aberta</a> (NIED/Unicamp). Design
+        por <a href="https://github.com/greevin">Cícero Neto</a>.<br> Código disponível no <a href="https://github.com/tamielbr/cc-chooser">Github</a>.</p>
+      <br>
+      <p><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a><br /> Seguindo a obra original, esta adaptação está
+        sob licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Atribuição-Compartilha Igual 4.0</a><br>
+
       </p>
+
+    </div>
   </div>
-</div>
-
-<div id="notes" class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">Notas</h3>
-  </div>
-  <div class="panel-body" style="text-align: justify;">
-    <p>Licenças <a href="https://creativecommons.org/choose/?lang=pt_BR">Creative Commons</a> se tornaram um padrão internacional para pessoas que querem licenciar suas obras de maneira mais aberta, ou seja, sem "todos os direitos reservados". Esse assistente lhe ajuda a verificar a compatilidade entre as seis diferentes licenças Creative Commons.
-      Para uma introdução rápida à Creative Commons e como elas se aplicam aos Recursos Educacionais Abertos, visite o <a href="http://educacaoaberta.org/cadernorea/licen%C3%A7as">Caderno REA</a>.
-    <p>
-      Não é possível relicenciar o trabalho de outra pessoa que está licenciado em Creative Commons. É possível difundir o trabalho de terceiros que tenham uma licença Creative Commons em sua obra em sua totalidade, por si só ou como parte de uma coleção, mas a licença original continuará se aplicando a obra original (ou seja, o que foi licenciado originalmente permanece com sua licença original).</p>
-  <p>Quando uma obra em Creative Commons é incluída <b>integralmente</b> com outra obra, existem duas camadas de licenciamento. A obra original permanece com sua licença original, mas a compilação pode ter outra licença, desde que compatível.</p>
-</div>
-</div>
-</div>
-
-<div id="advice" class="invisibleBox">
-<b>Você não pode misturar obras com essas licenças Creative Commons. Considere essas alternativas:</b>
-<br />
-  <ol>
-    <li> Selecione obras alternativas que estejam licenciadas com uma licença Creative Commons compatível.</li>
-    <li> Peça permissão aos detentores dos direitos da obra.</a></li>
-    <li> Faça um link ou “embed” do conteúdo apontando que essa obra está licenciada com sua licença específica Creative Commons.</li>
-    <li> Na dúvida, faça um link para a obra e não a insira (“embed”) em sua obra.</li>
-  </ol>
-</div>
-
-
-<div class="licence-list">
-  <!-- CC ZERO INFORMATION  -->
-<div id="cczero" class="invisibleBox" style="background: #f7f9fc; display:none;border-width: 1px;border-style: solid;border-color: #c9e3ff;">
-  <b>CC ZERO</b><br />
-  <a rel="license" target="_blank" href="http://creativecommons.org/choose/zero/">Creative Commons Zero</a>.
-</div>
-
-<!-- CC BY INFORMATION  -->
-<div id="ccby" class="invisibleBox" style="background: #eff4fa; display:none; border-width: 1px;border-style: solid;border-color: #c9e3ff;">
-  <b>CC BY</b><br />
-  <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.pt_BR"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br /><a rel="license" target="_blank" href="https://creativecommons.org/licenses/by/4.0/deed.pt_BR">Creative Commons Attribuição 4.0 Internacional</a>.
-</div>
-
-<!-- CC BY SA INFORMATION  -->
-<div id="ccbysa" class="invisibleBox" style="background: #e7eff8; display:none; border-width: 1px;border-style: solid;border-color: #c9e3ff;">
-  <b>CC BY SA</b><br />
-  <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br /><a rel="license" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-Compartilha Igual 4.0 Internacional</a>.
-</div>
-
-<!-- CC BY NC INFORMATION  -->
-<div id="ccbync" class="invisibleBox" style="background: #dfeaf5; display:none; border-width: 1px;border-style: solid;border-color: #c9e3ff;">
-  <b>CC BY NC</b><br />
-  <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.pt_BR"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/88x31.png" /></a><br /><a rel="license" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/deed.pt_BR">Creative Commons Atribuição-Não Comercial 4.0 Internacional</a>.
-</div>
-
-<!-- CC BY ND INFORMATION  -->
-<div id="ccbynd" class="invisibleBox" style="background: #d7e5f3; display:none; border-width: 1px;border-style: solid;border-color: #b4cce5;">
-  <b>CC BY ND</b><br />
- <a rel="license" href="https://creativecommons.org/licenses/by-nd/4.0/deed.pt_BR"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nd/3.0/88x31.png" /></a><br /><a rel="license" target="_blank" href="https://creativecommons.org/licenses/by-nd/4.0/deed.pt_BR">Creative Commons Atribuição-Sem Derivações 4.0 Internacional</a>.
-</div>
-
-<!-- CC BY NC SA INFORMATION  -->
-<div id="ccbyncsa" class="invisibleBox" style="background: #cfdff1; display:none; border-width: 1px;border-style: solid;border-color: #b4cce5;">
-  <b>CC BY NC SA</b><br />
-  <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt_BR"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br /><a rel="license" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt_BR">Creative Commons Atribuição-Não Comercial-Compartilha Igual 4.0 Internacional</a>.
-</div>
-
-<!-- CC BY NC ND INFORMATION  -->
-<div id="ccbyncnd" class="invisibleBox" style="background: #c7daee; display:none; border-width: 1px;border-style: solid;border-color: #a0b5cc;">
-  <b>CC BY NC ND</b><br />
- <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.pt_BR"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png" /></a><br /><a rel="license" target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.pt_BR">Creative Commons Atribuição-Não Comercial-Sem Derivações 4.0 Internacional</a>.
-</div>
-
-<div id="score" class="score" style="background:#fff; display:none ">
-Indicative Risk Level:
-  <label id="result"> <!-- a Label to locate result in it --></label>
-</div>
-</div>
-
-</div>
-<div class="footer">
-
-<p>Os responsáveis pela obra original <a href="http://www.web2rights.com/OERIPRSupport/creativecommons/">Web2Rights Ltd, HEFCE, CC, JISC Legal e HE Academy</a>, bem como os autores desse remix se eximem de qualquer responsabilidade legal. O uso das informações é feita por conta e risco do usuário, sendo o material desse site meramente informativo.</p>
-<p>Criado originalmente por <a style="text-decoration: underline !important;" href="http://www.robstillwell.info">Rob Stillwell</a>. Este remix criado pela <a href="http://educacaoaberta.org/">Cátedra UNESCO em Educação Aberta</a> (NIED/Unicamp). Design por <a href="https://github.com/greevin">Cícero Neto</a>.<br> Código disponível no <a href="https://github.com/tamielbr/cc-chooser">Github</a>.</p>
-<br><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a><br />
-  Seguindo a obra original, esta adaptação está sob licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Atribuição-Compartilha Igual 4.0</a><br>
-
-</p>
-
-</div>
-</div>
 </body>
+
 </html>
