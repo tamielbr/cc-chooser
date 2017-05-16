@@ -16,7 +16,7 @@ body {text-align: center; overflow:scroll; font-family: 'Roboto', sans-serif; fo
 .instructions { background: url(../images/blank.jpg) center center no-repeat; }
 A:link {
 	color:#333;
-
+	text-decoration: underline !important;
 }
 A:visited {
 	color:#333;
@@ -55,22 +55,13 @@ p {
 	top: 0px;
 	background-color:#FFF;
 }
-.holder{
-	background-color:#FFF;
-	margin: 35px 90px 35px 90px;
 
-
-
-
-}
 .options{
 	width:auto;
 	text-align:left;
 	margin-left:10px;
 	padding-top:5px;
 	padding-bottom:5px;
-
-
 }
 .footer{
 	padding: 5px 35px 5px 35px;
@@ -128,5 +119,208 @@ p {
 .list-group-item {
 	padding: 0 !important;
 }
+
+.header {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+
+.holder{
+	background-color:#FFF;
+	margin: 30px 20px 30px 20px;
+}
+
+#wizards, #notes {
+	margin: 15px 25px;
+	text-align: left;
+	display: block;
+}
+
+#wizards > div.panel-body, #notes > div.panel-body{
+	padding: 5px;
+}
+
+#title1 {
+	display: none;
+	margin: 0px 25px;
+	text-align: left;
+}
+
+#title2 {
+	display: none;
+	margin: 0 25px;
+	text-align: left;
+}
+
+#licencetwo {
+	padding: 5px;
+}
+
+.licence-list {
+	 margin: 0 25px 20px;
+}
+
+#textinfoone, #textinfotwo {
+	display:none;
+	margin: 10px 25px 0px;
+  text-align: left;
+}
+
+#advice {
+	margin: 10px 25px 0;
+	padding: 10px;
+	background:#79302e;
+	color:#FFF;
+	display:none;
+}
+
+#advice > ol > li {
+	margin-top: 10px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+	.holder{
+		background-color:#FFF;
+		/*margin: 30px 20px 30px 20px;*/
+		margin: 30px 100px 30px 100px;
+	}
+
+	#wizards, #notes {
+		margin: 15px 35px;
+		text-align: left;
+		display: block;
+	}
+
+	#wizards > div.panel-body, #notes > div.panel-body{
+		padding: 15px;
+	}
+
+	.licence-list {
+		 margin: 0 35px 20px;
+	}
+
+	#title1 {
+		display: none;
+		margin: 0px 35px;
+		text-align: left;
+	}
+
+	#title2 {
+		display: none;
+		margin: 0 35px;
+		text-align: left;
+	}
+
+	#textinfoone, #textinfotwo {
+		display:none;
+		margin: 10px 35px 0px;
+	  text-align: left;
+	}
+
+	#advice {
+		margin: 10px 35px 0;
+		padding: 10px;
+		background:#79302e;
+		color:#FFF;
+		display:none;
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.holder{
+		background-color:#FFF;
+		margin: 30px 150px 30px 150px;
+	}
+
+	#wizards, #notes {
+		margin: 15px 35px;
+		text-align: left;
+		display: block;
+	}
+
+	#wizards > div.panel-body, #notes > div.panel-body{
+		padding: 15px;
+	}
+
+	.licence-list {
+		 margin: 0 35px 20px;
+	}
+
+	#title1 {
+		display: none;
+		margin: 0px 35px;
+		text-align: left;
+	}
+
+	#title2 {
+		display: none;
+		margin: 0 35px;
+		text-align: left;
+	}
+
+	#textinfoone, #textinfotwo {
+		display:none;
+		margin: 10px 35px 0px;
+	  text-align: left;
+	}
+
+	#advice {
+		margin: 10px 35px 0;
+		padding: 10px;
+		background:#79302e;
+		color:#FFF;
+		display:none;
+	}
+}
+
+@media only screen and (min-width:1440px){
+	.holder{
+		background-color:#FFF;
+		margin: 30px 200px 30px 200px;
+	}
+
+	#wizards, #notes {
+		margin: 15px 35px;
+		text-align: left;
+		display: block;
+	}
+
+	#wizards > div.panel-body, #notes > div.panel-body{
+		padding: 15px;
+	}
+
+	.licence-list {
+		 margin: 0 35px 20px;
+	}
+
+	#title1 {
+		display: none;
+		margin: 0px 35px;
+		text-align: left;
+	}
+
+	#title2 {
+		display: none;
+		margin: 0 35px;
+		text-align: left;
+	}
+
+	#textinfoone, #textinfotwo {
+		display:none;
+		margin: 10px 35px 0px;
+	  text-align: left;
+	}
+
+	#advice {
+		margin: 10px 35px 0;
+		padding: 10px;
+		background:#79302e;
+		color:#FFF;
+		display:none;
+	}
+}
+
+
 dt { padding: 5px; background: #900; color: white; border-bottom: 1px solid white; border-right: 1px solid white; }
 dd { position: absolute; left: -9999px; top: -9999px; width: 319px; background: #900; padding: 10px; color: white; border-right: 1px solid white; }
