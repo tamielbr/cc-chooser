@@ -2,9 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Creative Commons - Assistentes de Compatibilidade</title>
   <link rel='stylesheet' type='text/css' href='css/style.css' />
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 <script type="text/javascript">
 
@@ -392,21 +394,21 @@ function Calculate(){
 
 }
 animatedcollapse.addDiv('instructions', 'fade=1,height=0px') /*Era 520 no height*/
-animatedcollapse.addDiv('licenceone', 'fade=1, height=110')
-animatedcollapse.addDiv('licencetwo', 'fade=1, height=220px')
-animatedcollapse.addDiv('textinfoone', 'fade=1,height=30px')
-animatedcollapse.addDiv('textinfotwo', 'fade=1,height=40px')
-animatedcollapse.addDiv('advice', 'fade=1,height=150px')
-animatedcollapse.addDiv('title1', 'fade=1,height=10px')
-animatedcollapse.addDiv('title2', 'fade=1,height=10px')
+animatedcollapse.addDiv('licenceone', 'fade=1')
+animatedcollapse.addDiv('licencetwo', 'fade=1')
+animatedcollapse.addDiv('textinfoone', 'fade=1')
+animatedcollapse.addDiv('textinfotwo', 'fade=1')
+animatedcollapse.addDiv('advice', 'fade=1')
+animatedcollapse.addDiv('title1', 'fade=1')
+animatedcollapse.addDiv('title2', 'fade=1')
 //THESE ARE THE INFO BLOCKS FOR EACH LICENCE
-animatedcollapse.addDiv('cczero', 'fade=1,height=60px')
-animatedcollapse.addDiv('ccby', 'fade=1,height=60px')
-animatedcollapse.addDiv('ccbysa', 'fade=1,height=60px')
-animatedcollapse.addDiv('ccbync', 'fade=1,height=60px')
-animatedcollapse.addDiv('ccbynd', 'fade=1,height=60px')
-animatedcollapse.addDiv('ccbyncsa', 'fade=1,height=60px')
-animatedcollapse.addDiv('ccbyncnd', 'fade=1,height=60px')
+animatedcollapse.addDiv('cczero', 'fade=1')
+animatedcollapse.addDiv('ccby', 'fade=1')
+animatedcollapse.addDiv('ccbysa', 'fade=1')
+animatedcollapse.addDiv('ccbync', 'fade=1')
+animatedcollapse.addDiv('ccbynd', 'fade=1')
+animatedcollapse.addDiv('ccbyncsa', 'fade=1')
+animatedcollapse.addDiv('ccbyncnd', 'fade=1')
 
 animatedcollapse.ontoggle=function($, divobj, state){ //fires each time a DIV is expanded/contracted
 	//$: Access to jQuery
@@ -421,92 +423,105 @@ animatedcollapse.init()
 
 <body>
 
-
-<blockquote>&nbsp;</blockquote>
 <div class="holder">
+  <div class="row">
 
-<div class="container"><img class="floatLeft" src="images/OERIPR LOGO.png" width="100" height="97" alt="" />
+<div class="header" style="margin-top: 20px">
+  <div><img class="floatLeft" src="images/OERIPR LOGO.png" width="100" height="97" alt=""/>
 
-<h3 id="ctype">
-  Creative Commons - Compatibilidade de Licenças</h3><br>
+  <h3 id="ctype">Creative Commons - Compatibilidade de Licenças</h3>
 
-  <label>
-    <select name="contentType" id="contentType" onchange="javascript:selectedType(this.value);">
-      <option value="0">Instruções</option>
-      <option value="1">Assistente 1 - Eu tenho alguns recursos em Creative Commons que quero remixar</option>
-      <option value="2">Assistente 2 - Eu sei qual licença Creative Commons quero usar</option>
-    </select>
-  </label>
+    <label>
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-8">
+      <select name="contentType" id="contentType" class="form-control" onchange="javascript:selectedType(this.value);">
+        <option value="0">Instruções</option>
+        <option value="1">Assistente 1 - Eu tenho alguns recursos em Creative Commons que quero remixar</option>
+        <option value="2">Assistente 2 - Eu sei qual licença Creative Commons quero usar</option>
+      </select>
+    </div>
+    </label>
+</div>
+</div>
+
 
 <a id="topPix" class="image instructions" onclick="return false" href="">View Image</a>
 
-<div id="title1" class="invisibleBox" style="width:605px; background:#C30; display:none; color:#FFF; font-weight:bold; ">
-Assistente #1
-</div>
-<div id="title2" class="invisibleBox" style="width:605px; background:#33C; display:none; color:#FFF; font-weight:bold; ">
-Assistente #2
+<!-- First option -->
+<div id="title1" class="panel panel-danger" style="display: none; margin: 0 35px 0 35px;text-align: left;">
+  <div class="panel-heading" style="background: rgb(204, 51, 0);color: rgb(255, 255, 255);">
+    <h3 class="panel-title">Assistente #1</h3>
+  </div>
+  <div id="licencetwo" class="panel-body" style="background: rgb(255, 255, 204);">
+     <p style="text-align:left">Eu tenho algumas obras com licenças Creative Commons que quero remixar para um REA. Eu quero fazer com que a obra final tenha uma única licença Creative Commons. Quero saber quais licenças são compatíveis.</p>
+     <b style="padding-left: 5px;">Selecione as licenças Creative Commons das obras que você quer remixar:</b>
+    <div class="options">
+    <input onclick="displayCompatibleLicences();" id="one" type="checkbox" value="one" /> CC ZERO<br />
+    <input onclick="displayCompatibleLicences();" id="two" type="checkbox" value="one" /> CC BY<br />
+    <input onclick="displayCompatibleLicences();" id="three" type="checkbox" value="one" /> CC BY SA<br />
+    <input onclick="displayCompatibleLicences();" id="four" type="checkbox" value="one" /> CC BY NC<br />
+    <input onclick="displayCompatibleLicences();" id="five" type="checkbox" value="one" /> CC BY ND<br />
+    <input onclick="displayCompatibleLicences();" id="six" type="checkbox" value="one" /> CC BY NC SA<br />
+    <input onclick="displayCompatibleLicences();" id="seven" type="checkbox" value="one" /> CC BY NC ND<br />
+    </div>
+  </div>
 </div>
 
-<div id="instructions" class="invisibleBox" style="width:605px; background:#eee; ">
-  <p><br>
+<div id="textinfoone" class="panel panel-default" style="display:none; margin: 10px 35px 0 35px;text-align: left;">
+  <!-- Default panel contents -->
+  <div  class="panel-heading" style="background: #9C6; padding-bottom: 0px;">
+    <p>Você pode colocar a sua obra ou adaptação sob essa(s) licença(s) Creative Commons:</b><br />
+  </div>
+</div>
+<!-- End of First option -->
+
+<!-- Second option -->
+<div id="title2" class="panel panel-primary" style="display: none; margin: 0 35px 0 35px;text-align: left;">
+  <div class="panel-heading" style="background:#33C; color: rgb(255, 255, 255);">
+    <h3 class="panel-title">Assistente #2</h3>
+  </div>
+  <div id="licenceone" class="panel-body" style="background: #C4E0FF; display:none">
+    <p style="text-align:left">Eu sei quais as licenças Creative Commons que eu quero usar para licenciar minha obra. Quero saber quais licenças são compatíveis com a que eu escolhi:</b><br /><br>
+    <select class="form-control" onchange="choosenEndLicence();" name="contentType" id="CEL" >
+        <option >Escolha uma opção</option>
+        <option  value="0">CC ZERO</option>
+        <option value="1">CC BY</option>
+        <option value="2">CC BY SA</option>
+         <option value="3">CC BY NC</option>
+        <option value="4">CC BY ND</option>
+        <option value="5">CC BY NC SA</option>
+        <option value="6">CC BY NC ND</option>
+      </select>
+  </div>
+</div>
+
+<div id="textinfotwo" class="panel panel-default" style="display:none; margin: 10px 35px 0 35px;text-align: left;">
+  <!-- Default panel contents -->
+  <div  class="panel-heading" style="background:#eee;padding-bottom: 0px;">
+    <p>Você pode remixar licenciadas com as seguinte(s) licença(s) Creative Commons como parte da sua obra, sabendo que elas serão compatíveis com a sua escolha de licença Creative Commons para a obra final:</b>
+  </div>
+</div>
+
+
+
+<div id="instructions" class="invisibleBox" style="margin: 0 30px 0 30px; background:#eee; ">
+  <p>
     Use a opção #1 se você quer usar recursos que já tem licenças Creative Commons e quer misturá-los (fazer um remix) e disponibilizar o seu recurso com uma única licença Creative Commons. O assistente vai lhe dizer quais são as suas opções.
 </p>
-  <p><br>
+  <p>
     Use a opção #2 se você já tiver escolhido a licença Creative Commons que você deseja usar para licenciar o seu Recurso Educacional Aberto e quer saber quais recursos com licenças Creative Commons você pode utilizar no seu remix, ou seja, quais tipos de licenças são compatíveis com a que você escolheu.
- <br />
-    <br />
   </p>
-    <h3>Notas</h3><br>
+    <h3 style="padding-left: 5px;">Notas</h3>
       <p>
         Esses assistentes são baseados nos problemas de compatibilidade que surgem quando recursos com diferentes licenças Creative Commons são misturado(remixados)  com outros recursos com licenças Creative Commons.
-    </p><p><br>
-      Não é possível relicenciar o trabalho de outra pessoa que está licenciado em Creative Commons. É possível difundir o trabalho de terceiros que tenham uma licença Creative Commons em sua obra em sua totalidade, por si só ou como parte de uma coleção, mas a licença original continuará se aplicando a obra original (ou seja, o que foi licenciado originalmente permanece com sua licença original).
+    </p><p>
+      Não é possível relicenciar o trabalho de outra pessoa que está licenciado em Creative Commons. É possível difundir o trabalho de terceiros que tenham uma licença Creative Commons em sua obra em sua totalidade, por si só ou como parte de uma coleção, mas a licença original continuará se aplicando a obra original (ou seja, o que foi licenciado originalmente permanece com sua licença original).</p>
 
-<br><br>Quando uma obra em Creative Commons é incluída, integralmente com outra obra, existem duas camadas de licenciamento. <strong>A obra original permanece com sua licença original, mas a compilação pode ter outra licença, desde que compatível</strong>.
+<p>Quando uma obra em Creative Commons é incluída, integralmente com outra obra, existem duas camadas de licenciamento. <strong>A obra original permanece com sua licença original, mas a compilação pode ter outra licença, desde que compatível</strong></p>.
     </h3>
 </div>
-<div id="licenceone" class="invisibleBox" style="width:605px; background: #C4E0FF; display:none">
-  <p  style="text-align:left">Eu sei quais as licenças Creative Commons que eu quero usar para licenciar minha obra. Quero saber quais licenças são compatíveis com a que eu escolhi:</b><br /><br>
-  <select onchange="choosenEndLicence();" name="contentType" id="CEL" >
-      <option >Escolha uma opção</option>
-      <option  value="0">CC ZERO</option>
-      <option value="1">CC BY</option>
-      <option value="2">CC BY SA</option>
-       <option value="3">CC BY NC</option>
-      <option value="4">CC BY ND</option>
-      <option value="5">CC BY NC SA</option>
-      <option value="6">CC BY NC ND</option>
-    </select>
 
 
-</div>
-
-
-
-<div id="licencetwo" class="invisibleBox" style="width:605px; background: #FFFFCC; display:none">
- <p style="text-align:left">Eu tenho algumas obras com licenças Creative Commons que quero remixar para um REA. Eu quero fazer com que a obra final tenha uma única licença Creative Commons. Quero saber quais licenças são compatíveis.</p><br/><b>Selecione as licenças Creative Commons das obras que você quer remixar:</b>
-
-  <div class="options">
-  <input onclick="displayCompatibleLicences();" id="one" type="checkbox" value="one" /> CC ZERO<br />
-<input onclick="displayCompatibleLicences();" id="two" type="checkbox" value="one" /> CC BY<br />
-<input onclick="displayCompatibleLicences();" id="three" type="checkbox" value="one" /> CC BY SA<br />
-<input onclick="displayCompatibleLicences();" id="four" type="checkbox" value="one" /> CC BY NC<br />
-<input onclick="displayCompatibleLicences();" id="five" type="checkbox" value="one" /> CC BY ND<br />
-<input onclick="displayCompatibleLicences();" id="six" type="checkbox" value="one" /> CC BY NC SA<br />
-<input onclick="displayCompatibleLicences();" id="seven" type="checkbox" value="one" /> CC BY NC ND<br />
-</div>
-
-</div>
-
-<div id="textinfoone" class="invisibleBox" style="width:605px; background: #9C6; display:none">
-  <b>Você pode colocar a sua obra ou adaptação sob essa(s) licença(s) Creative Commons:</b><br />
-</div>
-
-<div id="textinfotwo" class="invisibleBox" style="width:605px; background:#eee; display:none">
-  <b>Você pode remixar licenciadas com as seguinte(s) licença(s) Creative Commons como parte da sua obra, sabendo que elas serão compatíveis com a sua escolha de licença Creative Commons para a obra final:</b>
-</div>
-
-<div id="advice" class="invisibleBox" style=" width:595px; background:#6B0813; color:#FFF; display:none">
+<div id="advice" class="invisibleBox" style="margin: 10px 35px 0 35px; padding: 10px;background:#6B0813; color:#FFF; display:none">
 <b>Você não pode misturar obras com essas licenças Creative Commons. Considere essas alternativas:</b>
 <br />
   <ol>
@@ -517,54 +532,55 @@ Assistente #2
   </ol>
 </div>
 
-<!-- CC ZERO INFORMATION  -->
-<div id="cczero" class="invisibleBox" style="width:605px; background: #b0cbe8; display:none">
+
+<div class="licence-list" style="margin: 0 35px 20px;">
+  <!-- CC ZERO INFORMATION  -->
+<div id="cczero" class="invisibleBox" style="background: #b0cbe8; display:none">
   <b>CC ZERO</b><br />
   <a rel="license" target="_blank" href="http://creativecommons.org/choose/zero/">Creative Commons Zero</a>.
 </div>
 
 <!-- CC BY INFORMATION  -->
-<div id="ccby" class="invisibleBox" style="width:605px; background: #9cb7d4; display:none">
+<div id="ccby" class="invisibleBox" style="background: #9cb7d4; display:none">
   <b>CC BY</b><br />
   <a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br /><a rel="license" target="_blank" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
 </div>
 
 <!-- CC BY SA INFORMATION  -->
-<div id="ccbysa" class="invisibleBox" style="width:605px; background: #8faac8; display:none">
+<div id="ccbysa" class="invisibleBox" style="background: #8faac8; display:none">
   <b>CC BY SA</b><br />
   <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br /><a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 </div>
 
 <!-- CC BY NC INFORMATION  -->
-<div id="ccbync" class="invisibleBox" style="width:605px; background: #7a95b3; display:none">
+<div id="ccbync" class="invisibleBox" style="background: #7a95b3; display:none">
   <b>CC BY NC</b><br />
   <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/88x31.png" /></a><br /><a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
 </div>
 
 <!-- CC BY ND INFORMATION  -->
-<div id="ccbynd" class="invisibleBox" style="width:605px; background: #738eac; display:none">
+<div id="ccbynd" class="invisibleBox" style="background: #738eac; display:none">
   <b>CC BY ND</b><br />
  <a rel="license" href="http://creativecommons.org/licenses/by-nd/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nd/3.0/88x31.png" /></a><br /><a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nd/4.0/">Creative Commons Attribution-NoDerivatives 4.0 International License</a>.
 </div>
 
 <!-- CC BY NC SA INFORMATION  -->
-<div id="ccbyncsa" class="invisibleBox" style="width:605px; background: #5d7896; display:none">
+<div id="ccbyncsa" class="invisibleBox" style="background: #5d7896; display:none">
   <b>CC BY NC SA</b><br />
   <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br /><a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 </div>
 
 <!-- CC BY NC ND INFORMATION  -->
-<div id="ccbyncnd" class="invisibleBox" style="width:605px; background: #4d6886; display:none">
+<div id="ccbyncnd" class="invisibleBox" style="background: #4d6886; display:none">
   <b>CC BY NC ND</b><br />
  <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png" /></a><br /><a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
 </div>
 
-<div id="score" class="score" style="width:605px; background:#fff; display:none ">
+<div id="score" class="score" style="background:#fff; display:none ">
 Indicative Risk Level:
   <label id="result"> <!-- a Label to locate result in it --></label>
 </div>
-
-
+</div>
 
 </div>
 <div class="footer">
