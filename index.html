@@ -448,10 +448,10 @@ animatedcollapse.init()
 
 <!-- First option -->
 <div id="title1" class="panel panel-danger" style="display: none; margin: 0 35px 0 35px;text-align: left;">
-  <div class="panel-heading" style="background: rgb(204, 51, 0);color: rgb(255, 255, 255);">
+  <div class="panel-heading">
     <h3 class="panel-title">Assistente #1</h3>
   </div>
-  <div id="licencetwo" class="panel-body" style="background: rgb(255, 255, 204);">
+  <div id="licencetwo" class="panel-body" style="background: #fdfbfb">
      <p style="text-align:left">Eu tenho algumas obras com licenças Creative Commons que quero remixar para um REA. Eu quero fazer com que a obra final tenha uma única licença Creative Commons. Quero saber quais licenças são compatíveis.</p>
      <b style="padding-left: 5px;">Selecione as licenças Creative Commons das obras que você quer remixar:</b>
     <div class="options">
@@ -466,20 +466,20 @@ animatedcollapse.init()
   </div>
 </div>
 
-<div id="textinfoone" class="panel panel-default" style="display:none; margin: 10px 35px 0 35px;text-align: left;">
+<div id="textinfoone" style="display:none; margin: 10px 35px 0 35px;text-align: left;">
   <!-- Default panel contents -->
-  <div  class="panel-heading" style="background: #9C6; padding-bottom: 0px;">
+  <div  class="panel-heading" style="background: #c9e3ff; padding-bottom: 0px;">
     <p>Você pode colocar a sua obra ou adaptação sob essa(s) licença(s) Creative Commons:</b><br />
   </div>
 </div>
 <!-- End of First option -->
 
 <!-- Second option -->
-<div id="title2" class="panel panel-primary" style="display: none; margin: 0 35px 0 35px;text-align: left;">
-  <div class="panel-heading" style="background:#33C; color: rgb(255, 255, 255);">
+<div id="title2" class="panel panel-success" style="display: none; margin: 0 35px 0 35px;text-align: left;">
+  <div class="panel-heading">
     <h3 class="panel-title">Assistente #2</h3>
   </div>
-  <div id="licenceone" class="panel-body" style="background: #C4E0FF; display:none">
+  <div id="licenceone" class="panel-body" style="background: #fafcf9; display:none">
     <p style="text-align:left">Eu sei quais as licenças Creative Commons que eu quero usar para licenciar minha obra. Quero saber quais licenças são compatíveis com a que eu escolhi:</b><br /><br>
     <select class="form-control" onchange="choosenEndLicence();" name="contentType" id="CEL" >
         <option >Escolha uma opção</option>
@@ -494,9 +494,9 @@ animatedcollapse.init()
   </div>
 </div>
 
-<div id="textinfotwo" class="panel panel-default" style="display:none; margin: 10px 35px 0 35px;text-align: left;">
+<div id="textinfotwo" style="display:none; margin: 10px 35px 0 35px;text-align: left;">
   <!-- Default panel contents -->
-  <div  class="panel-heading" style="background:#eee;padding-bottom: 0px;">
+  <div  class="panel-heading" style="background:#c9e3ff;padding-bottom: 0px;">
     <p>Você pode remixar licenciadas com as seguinte(s) licença(s) Creative Commons como parte da sua obra, sabendo que elas serão compatíveis com a sua escolha de licença Creative Commons para a obra final:</b>
   </div>
 </div>
@@ -521,7 +521,7 @@ animatedcollapse.init()
 </div>
 
 
-<div id="advice" class="invisibleBox" style="margin: 10px 35px 0 35px; padding: 10px;background:#6B0813; color:#FFF; display:none">
+<div id="advice" class="invisibleBox" style="margin: 10px 35px 0 35px; padding: 10px;background:#79302e; color:#FFF; display:none">
 <b>Você não pode misturar obras com essas licenças Creative Commons. Considere essas alternativas:</b>
 <br />
   <ol>
@@ -535,43 +535,43 @@ animatedcollapse.init()
 
 <div class="licence-list" style="margin: 0 35px 20px;">
   <!-- CC ZERO INFORMATION  -->
-<div id="cczero" class="invisibleBox" style="background: #b0cbe8; display:none">
+<div id="cczero" class="invisibleBox" style="background: #f7f9fc; display:none">
   <b>CC ZERO</b><br />
   <a rel="license" target="_blank" href="http://creativecommons.org/choose/zero/">Creative Commons Zero</a>.
 </div>
 
 <!-- CC BY INFORMATION  -->
-<div id="ccby" class="invisibleBox" style="background: #9cb7d4; display:none">
+<div id="ccby" class="invisibleBox" style="background: #eff4fa; display:none">
   <b>CC BY</b><br />
   <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.pt_BR"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br /><a rel="license" target="_blank" href="https://creativecommons.org/licenses/by/4.0/deed.pt_BR">Creative Commons Attribuição 4.0 Internacional</a>.
 </div>
 
 <!-- CC BY SA INFORMATION  -->
-<div id="ccbysa" class="invisibleBox" style="background: #8faac8; display:none">
+<div id="ccbysa" class="invisibleBox" style="background: #e7eff8; display:none">
   <b>CC BY SA</b><br />
   <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br /><a rel="license" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-Compartilha Igual 4.0 Internacional</a>.
 </div>
 
 <!-- CC BY NC INFORMATION  -->
-<div id="ccbync" class="invisibleBox" style="background: #7a95b3; display:none">
+<div id="ccbync" class="invisibleBox" style="background: #dfeaf5; display:none">
   <b>CC BY NC</b><br />
   <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.pt_BR"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/88x31.png" /></a><br /><a rel="license" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/deed.pt_BR">Creative Commons Atribuição-Não Comercial 4.0 Internacional</a>.
 </div>
 
 <!-- CC BY ND INFORMATION  -->
-<div id="ccbynd" class="invisibleBox" style="background: #738eac; display:none">
+<div id="ccbynd" class="invisibleBox" style="background: #d7e5f3; display:none">
   <b>CC BY ND</b><br />
  <a rel="license" href="https://creativecommons.org/licenses/by-nd/4.0/deed.pt_BR"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nd/3.0/88x31.png" /></a><br /><a rel="license" target="_blank" href="https://creativecommons.org/licenses/by-nd/4.0/deed.pt_BR">Creative Commons Atribuição-Sem Derivações 4.0 Internacional</a>.
 </div>
 
 <!-- CC BY NC SA INFORMATION  -->
-<div id="ccbyncsa" class="invisibleBox" style="background: #5d7896; display:none">
+<div id="ccbyncsa" class="invisibleBox" style="background: #cfdff1; display:none">
   <b>CC BY NC SA</b><br />
   <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt_BR"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br /><a rel="license" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt_BR">Creative Commons Atribuição-Não Comercial-Compartilha Igual 4.0 Internacional</a>.
 </div>
 
 <!-- CC BY NC ND INFORMATION  -->
-<div id="ccbyncnd" class="invisibleBox" style="background: #4d6886; display:none">
+<div id="ccbyncnd" class="invisibleBox" style="background: #c7daee; display:none">
   <b>CC BY NC ND</b><br />
  <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.pt_BR"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png" /></a><br /><a rel="license" target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.pt_BR">Creative Commons Atribuição-Não Comercial-Sem Derivações 4.0 Internacional</a>.
 </div>
