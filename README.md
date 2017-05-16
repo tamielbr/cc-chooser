@@ -13,4 +13,4 @@ Assistente de escolha de licenças Creative Commons, traduzido e adaptado de htt
 - Bootstrap adicionado ao CSS - http://getbootstrap.com
 - Novo esquema de cores para melhorar a clareza
 - Mobile-ready
-- Resolveu problema do ``select`` ficar prezo no menu
+- Resolveu problema do ``select`` ficar preso no menu ao usar o Firefox
