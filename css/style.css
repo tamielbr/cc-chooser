@@ -16,6 +16,7 @@ body {text-align: center; overflow:scroll; font-family: 'Roboto', sans-serif; fo
 .instructions { background: url(../images/blank.jpg) center center no-repeat; }
 A:link {
 	color:#333;
+
 }
 A:visited {
 	color:#333;
