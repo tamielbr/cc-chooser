@@ -10,7 +10,7 @@ html, body {
 body {
   text-align: center;
   overflow: scroll;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Montserrat', sans-serif !important;
   font-size: 12px;
 }
 
