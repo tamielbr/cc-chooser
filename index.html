@@ -3,7 +3,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <title>Creative Commons - Assistentes de Compatibilidade</title>
   <link rel='stylesheet' type='text/css' href='css/style.css' />
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -475,25 +475,27 @@
 <body>
 
   <div class="holder">
-    <div class="row">
-
-      <div class="header">
-        <div style="margin: 0 20px;">
-          <h3 id="ctype">Creative Commons - Compatibilidade de Licenças</h3>
+    <div class="header">
+      <div class="row">
+        <div class="col-md-4 logo">
+          <img src="http://aberta.org.br/wp-content/uploads/2017/03/logo_aberta_02b1.png" alt="Logo">
         </div>
-        <label style="margin-top: 10px;">
-  <div class="col-lg-12 col-md-12 col-sm-10 col-xs-10" style="margin: 0 auto;float: none;">
-  <select name="contentType" id="contentType" class="form-control" onchange="javascript:selectedType(this.value);" autocomplete="off">
-    <option value="0">Instruções</option>
-    <option value="1">Assistente 1 - Eu tenho alguns recursos em Creative Commons que quero remixar</option>
-    <option value="2">Assistente 2 - Eu sei qual licença Creative Commons quero usar</option>
-  </select>
-</div>
-</label>
+
+        <div style="" class="col-md-8">
+          <h3 id="ctype">Creative Commons - Compatibilidade de Licenças</h3>
+          <label style="margin-top: 10px;">
+            <div class="" style="">
+              <select name="contentType" id="contentType" class="form-control" onchange="javascript:selectedType(this.value);" autocomplete="off">
+                <option value="0">Instruções</option>
+                <option value="1">Assistente 1 - Eu tenho alguns recursos em Creative Commons que quero remixar</option>
+                <option value="2">Assistente 2 - Eu sei qual licença Creative Commons quero usar</option>
+              </select>
+            </div>
+          </label>
+        </div>
       </div>
-
-
-      <!-- <a id="topPix" class="image instructions" onclick="return false" href="">View Image</a> -->
+    </div>
+    <div class="row">
 
       <!-- First option -->
       <div id="title1" class="panel panel-danger">
